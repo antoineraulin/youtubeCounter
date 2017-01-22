@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+    function getyear(){
+        var year = new Date().getFullYear();
+        document.getElementById("copyright").innerHTML = "Copyright &copy; Antoine Raulin & Dimitri Mades "+year;
+    }
+    </script>
+	<link rel="icon" type="image/svg" href="images/YouTube 2.svg" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Site décrivant le métier de Game Designer">
+    <meta name="author" content="Antoine Raulin">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="odometer-theme-default.css" />
+<script src="odometer.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>real time subscriber count</title>
+
+    <!-- thème CSS -->
+    <link href="css/theme.css" rel="stylesheet">
+	    <link href="css/index.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="police/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+	
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();">
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" id="title" href="#page-top" >
+                    <i><img  src="images/YouTube 2.svg" width="25" height="25" id="manette-img"></i> <span class="light">real time</span> youtube subscriber count
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                   <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="intro" style="background-color: black;">
+        <div class="intro-body" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+					<br>
+					<br><br><br>
+                        <!DOCTYPE html>
+
+<div id="div1">
+<script>
+var initialCount;
+    var initialName;
+    var resetCount;
+function httpGet1(theData)
+{
+ $.ajax({
+    type:     "GET",
+    url:      "https://www.googleapis.com/youtube/v3/channels?part=statistics&id="+theData+"&key=AIzaSyAYITnYveJdE2wMxZUNnJihVmWhVSz01zg",
+    dataType: "jsonp",
+    success: function(data1){
+        console.log(data1['items'][0]['statistics']['subscriberCount']);
+        if(resetCount != true){
+            var count = parseInt(data1['items'][0]['statistics']['subscriberCount']) - initialCount;
+            if (count > 0) {
+                $('#odometer2').html(Math.abs(count));
+                $('#odometer2').css('color', 'green');
+            }else{
+                $('#odometer2').html(-Math.abs(count));
+                $('#odometer2').css('color', 'red');
+            }
+            
+        }else if(resetCount == true){
+            resetCount = false;
+            initialCount = parseInt(data1['items'][0]['statistics']['subscriberCount']);
+        }
+	$('#odometer').html(data1['items'][0]['statistics']['subscriberCount']);
+    }
+});
+}
+function httpGet2()
+{
+    document.getElementById("odometer").style.visibility = "hidden";
+    document.getElementById("odometer2").style.visibility = "hidden";
+var ID2 = document.getElementById("in1").value;
+    if(ID2 != ""){
+        if(ID2 != initialName){initialName = ID2;resetCount = true;}
+        document.getElementById("odometer").style.visibility = "visible";
+        document.getElementById("odometer2").style.visibility = "visible";
+ $.ajax({
+    type:     "GET",
+    url:      "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBU_oWEIULi3-n96vWKETYCMsldYDAlz2M&part=snippet&q="+ID2+"&type=channel",
+    dataType: "jsonp",
+    success: function(data1){
+	var thedata = data1['items'][0]['id']['channelId'];
+        httpGet1(thedata);
+    }
+});}
+setTimeout(httpGet2, 600);
+}
+
+</script>
+
+<form class="cf">
+    <input type="text" id="in1" placeholder="Search: Ex PewDiePie" style="color: black;font-family: 'PhenomenaBold';width: 100%">
+</form>
+
+
+<center id="CT">
+<body onload="httpGet2();">
+<div id="odometer" class="odometer"></div><br/>
+    <div id="odometer2" class="odometer"></div>
+</body>
+</center>
+
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Footer -->
+    <footer style="position: fixed;bottom: 0;width: 100%;">
+        <div class="container text-center">
+            <p id="copyright"></p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/NavBarScript.js"></script>
+	<script src="js/jquery.fittext.js"></script>
+<script>
+  jQuery("#title").fitText(2.6);
+</script>
+<script>
+var targetOffset = $("#salaire").offset().top;
+
+var $w = $(window).scroll(function(){
+    if ( $w.scrollTop() > targetOffset ) {   
+		$('.navbar-custom.top-nav-collapse button').css({"color":"#8A5901"});
+    }else if ( $w.scrollTop() > $("#qualité").offset().top ) {   
+        $('.navbar-custom.top-nav-collapse').css({"background-color":"rgb(222,0,0)"});
+		$('.navbar-custom.top-nav-collapse a').css({"color":"white"});
+		$(".navbar-custom.top-nav-collapse #manette-img").css({content:'url(img/controller.png)'});
+		$('.navbar-custom.top-nav-collapse button').css({"color":"white"});
+    }else {
+	 $('.navbar-custom.top-nav-collapse').css({"background-color":""});
+	 $('.navbar-custom.top-nav-collapse a').css({"color":""});
+	 $(".navbar-custom.top-nav-collapse #manette-img").css({content:''});
+	 $('.navbar-custom.top-nav-collapse button').css({"color":""});
+    }
+});
+</script>
+
+</body>
+
+</html>
