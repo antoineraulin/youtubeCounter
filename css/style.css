@@ -112,4 +112,5 @@ a{
 
 #fullScreenDiv {
     display: inline-block;
+  vertical-align:top;
 }
