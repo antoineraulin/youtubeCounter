@@ -187,20 +187,20 @@ function fullScreen(){
 	setInterval(mouseMove(), 100);
 	
 }
-function mouseMove(){
-	document.onmousemove = (function() {
-		document.getElementById('fullScreenButton').style.visibility = "visible";
-  var onmousestop = function() {
-    document.getElementById('fullScreenButton').style.visibility = "hidden";
-  }, thread;
-
-  return function() {
-    clearTimeout(thread);
-    thread = setTimeout(onmousestop, 2000);
-  };
-})();
-}
 	
+</script>
+<script>
+	var i = null;
+$("#theBody").mousemove(function() {
+    clearTimeout(i);
+    $("#fullScreenButton").show();
+    i = setTimeout(function () {
+        $("#fullScreenButton").hide();
+    }, 2000);
+}).mouseleave(function() {
+    clearTimeout(i);
+    $("#fullScreenButton").hide();  
+});
 </script>
 
 </body>
