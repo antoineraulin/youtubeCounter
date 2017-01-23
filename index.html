@@ -184,8 +184,10 @@ var $w = $(window).scroll(function(){
 function fullScreen(){
 	document.getElementById('navbar').style.visibility = "hidden";
 	document.getElementById("in1").style.visibility = "hidden";
+	setInterval(mouseMove(), 100);
 	
 }
+function mouseMove(){
 	document.onmousemove = (function() {
 		document.getElementById('fullScreenButton').style.visibility = "visible";
   var onmousestop = function() {
@@ -197,6 +199,7 @@ function fullScreen(){
     thread = setTimeout(onmousestop, 2000);
   };
 })();
+}
 	
 </script>
 
