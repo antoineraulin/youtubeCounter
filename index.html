@@ -37,7 +37,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2('in1');">
 
     <nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
         <div class="container">
@@ -96,11 +96,11 @@ function httpGet1(theData)
     }
 });
 }
-function httpGet2()
+function httpGet2(inputId)
 {
     document.getElementById("odometer").style.visibility = "hidden";
     document.getElementById("odometer2").style.visibility = "hidden";
-var ID2 = document.getElementById("in1").value;
+var ID2 = document.getElementById(inputId).value;
     if(ID2 != ""){
         if(ID2 != initialName){initialName = ID2;resetCount = true;}
         document.getElementById("odometer").style.visibility = "visible";
@@ -114,7 +114,7 @@ var ID2 = document.getElementById("in1").value;
         httpGet1(thedata);
     }
 });}
-setTimeout(httpGet2, 600);
+setTimeout(httpGet2(inputId), 600);
 }
 
 </script>
