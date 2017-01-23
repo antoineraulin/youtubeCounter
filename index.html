@@ -181,10 +181,15 @@ var $w = $(window).scroll(function(){
 });
 </script>
 <script>
+	var time = false;
 function fullScreen(){
+	if(time != true){
 	document.getElementById('navbar').style.visibility = "hidden";
 	document.getElementById("in1").style.visibility = "hidden";
-	setInterval(mouseMove(), 100);
+	}else if(time == false){
+		document.getElementById('navbar').style.visibility = "visible";
+	document.getElementById("in1").style.visibility = "visible";
+	}
 	
 }
 	
@@ -196,7 +201,7 @@ $("#page-top").mousemove(function() {
     $("#fullScreenButton").show();
     i = setTimeout(function () {
         $("#fullScreenButton").hide();
-    }, 2000);
+    }, 3000);
 }).mouseleave(function() {
     clearTimeout(i);
     $("#fullScreenButton").hide();  
