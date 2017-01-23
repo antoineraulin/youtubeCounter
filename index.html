@@ -39,7 +39,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();">
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
+    <nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand page-scroll" id="title" href="#page-top" >
@@ -179,6 +179,13 @@ var $w = $(window).scroll(function(){
 	 $('.navbar-custom.top-nav-collapse button').css({"color":""});
     }
 });
+</script>
+<script>
+function fullScreen(){
+	document.getElementById('navbar').style.visibility = "hidden";
+	document.getElementById("in1").style.visibility = "hidden";
+}
+	
 </script>
 
 </body>
