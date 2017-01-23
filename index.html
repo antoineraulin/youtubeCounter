@@ -186,9 +186,11 @@ function fullScreen(){
 	if(time != true){
 	document.getElementById('navbar').style.visibility = "hidden";
 	document.getElementById("in1").style.visibility = "hidden";
-	}else if(time == false){
+	time = true;
+	}else if(time == true){
 		document.getElementById('navbar').style.visibility = "visible";
 	document.getElementById("in1").style.visibility = "visible";
+		time = false;
 	}
 	
 }
