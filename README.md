@@ -16,7 +16,7 @@ Il propose un site web au design épuré et moderne qui respecte le "Responsive 
 
 ##license
 
-YouTubeCounter Copyright (C) 2017 Antoine Raulin & Dimitri Mades
+YouTubeCounter Copyright © 2017 Antoine Raulin & Dimitri Mades
 
 You are allowed to use, modify and redistribute the project as long as original credits are kept and changes are documented. You are not allowed to redistribute the project without attribution and credits or prior permission. You can only redistribute this project under open source license.
 
