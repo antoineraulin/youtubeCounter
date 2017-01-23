@@ -186,12 +186,8 @@ function fullScreen(){
 	document.getElementById("in1").style.visibility = "hidden";
 	
 }
-	document.onmousemove = function(){
-	document.getElementById('fullScreenButton').style.visibility = "visible";
-	
-	}
 	document.onmousemove = (function() {
-		alert("it move");
+		document.getElementById('fullScreenButton').style.visibility = "visible";
   var onmousestop = function() {
     document.getElementById('fullScreenButton').style.visibility = "hidden";
   }, thread;
