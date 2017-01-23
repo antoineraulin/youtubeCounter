@@ -106,3 +106,10 @@ a{
     color: white;
     font-weight:bold;
 }
+#inputDiv {
+    display: inline-block;
+}
+
+#fullScreenDiv {
+    display: inline-block;
+}
