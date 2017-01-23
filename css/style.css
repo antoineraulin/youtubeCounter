@@ -106,11 +106,10 @@ a{
     color: white;
     font-weight:bold;
 }
-#inputDiv {
-    display: inline-block;
+.flexContainer {
+    display: flex;
 }
 
-#fullScreenDiv {
-    display: inline-block;
-  vertical-align:top;
+.inputField {
+    flex: 1;
 }
