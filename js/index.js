@@ -28,6 +28,7 @@ var i = null;
 function getyear(){
         var year = new Date().getFullYear();
         document.getElementById("copyright").innerHTML = "Copyright &copy; Antoine Raulin & Dimitri Mades "+year;
+        document.getElementById("copyright").setAttribute("style", "font-family: Arial;");
     }
 
 function httpGet1(theData)
@@ -127,10 +128,14 @@ function fullScreen(){
 	if(time != true){
 	document.getElementById('navbar').style.visibility = "hidden";
 	document.getElementById("in1").style.visibility = "hidden";
+    document.getElementById("in2").style.visibility = "hidden";
+    document.getElementById("copyright").style.visibility = "hidden";
 	time = true;
 	}else if(time == true){
 		document.getElementById('navbar').style.visibility = "visible";
 	document.getElementById("in1").style.visibility = "visible";
+    document.getElementById("in2").style.visibility = "visible";
+    document.getElementById("copyright").style.visibility = "visible";
 		time = false;
 	}
 	
