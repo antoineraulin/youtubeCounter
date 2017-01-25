@@ -153,24 +153,3 @@ function add(){
             time2 = false;
         }
     }
-
-
-//jquery
-
-
-(function( $ ){
-$("#page-top").mousemove(function() {
-    clearTimeout(i);
-    $("#fullScreenButton").show();
-    $("#addButton").show();
-    i = setTimeout(function () {
-        $("#fullScreenButton").hide();
-        $("#addButton").hide();
-    }, 3000);
-}).mouseleave(function() {
-    clearTimeout(i);
-    $("#fullScreenButton").hide();
-    $("#addButton").hide();
-});
-})( jQuery );
-
