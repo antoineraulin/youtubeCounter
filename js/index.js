@@ -143,14 +143,14 @@ function add(){
         document.getElementById('div2').style.width = "50%";
         document.getElementById('div2').style.visibility = "visible";
         nouveauDiv = document.createElement("div");
-        nouveauDiv.setAttribute("class", "odomter");
-        nouveauDiv.setAttribute("id", "odomter12");
+        nouveauDiv.setAttribute("class", "odometer");
+        nouveauDiv.setAttribute("id", "odometer12");
         nouveauDiv2 = document.createElement("div");
-        nouveauDiv2.setAttribute("class", "odomter");
-        nouveauDiv2.setAttribute("id", "odomter22");
+        nouveauDiv2.setAttribute("class", "odometer");
+        nouveauDiv2.setAttribute("id", "odometer22");
         var mon_div = document.getElementById("CT2");
-        mon_div.appendChild(nouveauDiv);
-        mon_div.appendChild(nouveauDiv2);
+        mon_div.appendChild(this.nouveauDiv);
+        mon_div.appendChild(this.nouveauDiv2);
         document.getElementById('addButton').setAttribute( 'src', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAACdUlEQVR4Xu2ZwU0DQRAEZyIAMoEMyAAywmQEGTgDyAQ7gkWH7uMP0vaKpgXl97V7XHVzkve6+EQT6OjpGK4QFH4TIAhB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NghB4QTCx2ODEBROIHw8NugvChpj3FbVU1XdV9V1+G/87fFOVXWsqufufp8dZnqDdjlvs0Vc/0XgblaSIuilqh4ALhF47e7HmaQi6IPH2gzii2tP3X0zk1YEjZkCrr0k0N1TzKcu3qrGGAhauOsQtADPEUWQg/JCB4IW4DmiCHJQXuhA0AI8RxRBDsoLHQ5B29nS1cKM/zl67u6ps0vlfxBHPfotZjnq2U6yOSzVJP38Yel+mrBJOuyvG3jcfS/rvL9uOMyeZG9fO/2I024cUioBBKnkTDkEmUCrNQhSyZlyCDKBVmsQpJIz5RBkAq3WIEglZ8ohyARarUGQSs6UQ5AJtFqDIJWcKYcgE2i1BkEqOVMOQSbQag2CVHKmHIJMoNUaBKnkTDkEmUCrNQhSyZlyCDKBVmsQpJIz5RBkAq3WIEglZ8ohyARarUGQSs6UQ5AJtFqDIJWcKYcgE2i1BkEqOVMOQSbQag2CVHKmHIJMoNUaBKnkTDkEmUCrNQhSyZlyCDKBVmsQpJIz5RBkAq3WIEglZ8ohyARarUGQSs6UQ5AJtFqDIJWcKfcJ9OtMaVd2ZVcAAAAASUVORK5CYII=' );
             time2 = true;
         }else if(time2 == true){
