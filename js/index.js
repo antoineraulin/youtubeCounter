@@ -156,9 +156,6 @@ function add(){
 
 
 //jquery
-(function( $ ){
-jQuery("#title").fitText(2.6);
-})( jQuery );
 
 
 (function( $ ){
