@@ -156,8 +156,12 @@ function add(){
 
 
 //jquery
+(function( $ ){
 jQuery("#title").fitText(2.6);
+})( jQuery );
 
+
+(function( $ ){
 $("#page-top").mousemove(function() {
     clearTimeout(i);
     $("#fullScreenButton").show();
@@ -171,4 +175,5 @@ $("#page-top").mousemove(function() {
     $("#fullScreenButton").hide();
     $("#addButton").hide();
 });
+})( jQuery );
 
