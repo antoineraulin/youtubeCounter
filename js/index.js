@@ -147,15 +147,18 @@ function add(){
         document.getElementById('div1').style.width = "50%";
         document.getElementById('div2').style.width = "50%";
         document.getElementById('div2').style.visibility = "visible";
-        document.getElementById('addButton').setAttribute( 'src', 'images/-.png' );
+        document.getElementById('addButton').setAttribute( 'src', 'images/-.svg' );
             time2 = true;
         }else if(time2 == true){
             document.getElementById('div1').style.width = "100%";
             document.getElementById('div2').style.width = "0px";
             document.getElementById('div2').style.visibility = "hidden";
+	    try{
             document.getElementById('odometer12').remove();
             document.getElementById('odometer22').remove();
-            document.getElementById('addButton').setAttribute( 'src', 'images/+.png' );
+	    }
+	    catch(err) {}
+            document.getElementById('addButton').setAttribute( 'src', 'images/+.svg' );
             time2 = false;
         }
     }
