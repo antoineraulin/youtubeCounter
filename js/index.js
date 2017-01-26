@@ -38,7 +38,6 @@ function httpGet1(theData)
     url:      "https://www.googleapis.com/youtube/v3/channels?part=statistics&id="+theData+"&key=AIzaSyAYITnYveJdE2wMxZUNnJihVmWhVSz01zg",
     dataType: "jsonp",
     success: function(data1){
-        console.log(data1['items'][0]['statistics']['subscriberCount']);
         if(resetCount != true){
             var count = parseInt(data1['items'][0]['statistics']['subscriberCount']) - initialCount;
             if (count > 0) {
@@ -84,7 +83,6 @@ function httpGet12(theData)
     url:      "https://www.googleapis.com/youtube/v3/channels?part=statistics&id="+theData+"&key=AIzaSyAYITnYveJdE2wMxZUNnJihVmWhVSz01zg",
     dataType: "jsonp",
     success: function(data1){
-        console.log(data1['items'][0]['statistics']['subscriberCount']);
         if(resetCount2 != true){
             var count = parseInt(data1['items'][0]['statistics']['subscriberCount']) - initialCount2;
             if (count > 0) {
