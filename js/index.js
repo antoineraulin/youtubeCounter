@@ -145,7 +145,7 @@ function add(){
         document.getElementById('div1').style.width = "50%";
         document.getElementById('div2').style.width = "50%";
         document.getElementById('div2').style.visibility = "visible";
-        document.getElementById('addButton').setAttribute( 'src', 'images/-.svg' );
+        document.getElementById('addButton').setAttribute( 'src', 'images/-.png' );
             time2 = true;
         }else if(time2 == true){
             document.getElementById('div1').style.width = "100%";
@@ -156,7 +156,7 @@ function add(){
             document.getElementById('odometer22').remove();
 	    }
 	    catch(err) {}
-            document.getElementById('addButton').setAttribute( 'src', 'images/+.svg' );
+            document.getElementById('addButton').setAttribute( 'src', 'images/+.png' );
             time2 = false;
         }
     }
