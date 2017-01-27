@@ -15,7 +15,9 @@
     <meta name="author" content="Antoine Raulin">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/stopwatch.js"></script>
+    <script type="text/javascript" src="js/flipclock.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" href="css/flipclock.css">
 <link rel="stylesheet" href="odometer-theme-default.css" >
 <script type="text/javascript" src="odometer.js"></script>
   
@@ -38,7 +40,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();start();">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();">
 
     <nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
         <div class="container">
@@ -69,7 +71,7 @@
 					<br>
 					<br><br><br>
                         <div id="stopWatchDiv">
-                        <div>StopWatch: <span id="time"></span></div>
+                            <div class="clock flip-clock-wrapper" style="margin:2em;"></div>
                         </div>
 <div class="flexContainer">
 
@@ -151,6 +153,16 @@
   ga('send', 'pageview');
 
 </script>
+<script type="text/javascript">
+		var clock;
+		
+		$(document).ready(function() {
+			
+			clock = $('.clock').FlipClock({
+		        clockFace: 'HourlyCounter'
+		    });
+		});
+	</script>
 
 </body>
 
