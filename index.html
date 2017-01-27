@@ -15,6 +15,7 @@
     <meta name="author" content="Antoine Raulin">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/stopwatch.js"></script>
 <link rel="stylesheet" href="odometer-theme-default.css" >
 <script type="text/javascript" src="odometer.js"></script>
   
@@ -37,16 +38,16 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();start();">
 
     <nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll" id="title" href="#page-top" >
+                <a class="navbar-brand page-scroll" id="title" href="#page-top" unselectable="on">
                     <i><img  src="images/YouTube 2.svg" width="25" height="25" id="manette-img"></i> <span class="light">real time</span> youtube subscriber count
                 </a>
                 <div id="navBarDiv">
-                <a id="timeCounterButton" style="position: absolute;right: 2em;top: 2em;">
+                <a id="timeCounterButton" style="position: absolute;right: 2em;top: 1em;">
                 <img src="images/Stopwatch-100.png" width="40" height="40" >
                     </a></div>
             </div>
@@ -67,6 +68,9 @@
                     <div class="col-md-8 col-md-offset-2">
 					<br>
 					<br><br><br>
+                        <div id="stopWatchDiv" style="visibility: hidden">
+                        <h1 id="time"></h1>
+                        </div>
 <div class="flexContainer">
 
 <div id="div1" class="inputField">
@@ -79,8 +83,8 @@
 
 
 <center id="CT">
-<div id="odometer" class="odometer"></div><br/>
-    <div id="odometer2" class="odometer"></div>
+<div id="odometer" class="odometer" unselectable="on"></div><br/>
+    <div id="odometer2" class="odometer" unselectable="on"></div>
 </center>
 
 </div>
@@ -89,8 +93,8 @@
 
 
 <center id="CT2">
-<div id="odometer12" class="odometer"></div><br/>
-    <div id="odometer22" class="odometer"></div>
+<div id="odometer12" class="odometer" unselectable="on"></div><br/>
+    <div id="odometer22" class="odometer" unselectable="on"></div>
 </center>
 
 </div>

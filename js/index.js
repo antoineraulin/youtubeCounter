@@ -19,6 +19,7 @@ var initialName2;
 var resetCount2;
 var time = false;
 var time2 = false;
+var time3 = false;
 var i = null;
 
 
@@ -30,6 +31,16 @@ function getyear(){
         document.getElementById("copyright").innerHTML = "Copyright &copy; Antoine Raulin & Dimitri Mades "+year;
         document.getElementById("copyright").setAttribute("style", "font-family: Arial;");
     }
+
+function displayStopWatch(){
+    if(time != true){
+	document.getElementById('stopWatchDiv').style.visibility = "visible";
+	time = true;
+	}else if(time == true){
+	document.getElementById('stopWatchDiv').style.visibility = "hidden";
+		time = false;
+	}
+}
 
 function httpGet1(theData)
 {
