@@ -113,3 +113,5 @@ a{
 .inputField {
     flex: 1;
 }
+navBarDiv.ext-box { display: table; width:100%;}
+navBarDiv.int-box { display: table-cell; vertical-align: middle; }
