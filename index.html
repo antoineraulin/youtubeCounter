@@ -40,7 +40,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();start();">
 
     <nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
         <div class="container">
@@ -70,8 +70,8 @@
                     <div class="col-md-8 col-md-offset-2">
 					<br>
 					<br><br><br>
-                        <div id="stopWatchDiv">
-                            <div class="clock flip-clock-wrapper" style="margin:2em;"></div>
+                        <div id="stopWatchDiv" style="visibility: hidden;">
+                            <h1 id="time"></h1>
                         </div>
 <div class="flexContainer">
 
