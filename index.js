@@ -21,6 +21,7 @@ var time = false;
 var time2 = false;
 var time3 = false;
 var i = null;
+var myVar;
 
 
 
@@ -62,9 +63,6 @@ function httpGet1(theData)
         }else if(resetCount == true){
             resetCount = false;
             initialCount = parseInt(data1['items'][0]['statistics']['subscriberCount']);
-            stop();
-            reset();
-            start();
             
         }
 	$('#odometer').html(data1['items'][0]['statistics']['subscriberCount']);
@@ -111,9 +109,6 @@ function httpGet12(theData)
         }else if(resetCount2 == true){
             resetCount2 = false;
             initialCount2 = parseInt(data1['items'][0]['statistics']['subscriberCount']);
-            stop();
-            reset();
-            start();
         }
 	$('#odometer12').html(data1['items'][0]['statistics']['subscriberCount']);
     }
@@ -137,7 +132,7 @@ var ID2 = document.getElementById("in2").value;
         httpGet12(thedata);
     }
 });}
-setTimeout(httpGet22, 600);
+myVar = setTimeout(httpGet22, 600);
 }
 
 function fullScreen(){
@@ -160,21 +155,24 @@ function fullScreen(){
 
 function add(){
         if(time2 != true){
-        document.getElementById('div1').style.width = "50%";
-        document.getElementById('div2').style.width = "50%";
-        document.getElementById('div2').style.visibility = "visible";
-        document.getElementById('addButton').setAttribute( 'src', 'images/-.png' );
+        document.getElementById('section2').style.visibility = "visible";
+            document.getElementById('odometer12').style.visibility = "visible";
+            document.getElementById('odometer22').style.visibility = "visible";
+            document.getElementById('in2').style.visibility = "visible";
+            document.getElementById('label2').style.visibility = "visible";
+            httpGet22();
             time2 = true;
         }else if(time2 == true){
-            document.getElementById('div1').style.width = "100%";
-            document.getElementById('div2').style.width = "0px";
-            document.getElementById('div2').style.visibility = "hidden";
+            
 	    try{
-            document.getElementById('odometer12').remove();
-            document.getElementById('odometer22').remove();
+            clearTimeout(myVar);
 	    }
 	    catch(err) {}
-            document.getElementById('addButton').setAttribute( 'src', 'images/+.png' );
+            document.getElementById('section2').style.visibility = "hidden";
+            document.getElementById('odometer12').style.visibility = "hidden";
+            document.getElementById('odometer22').style.visibility = "hidden";
+            document.getElementById('in2').style.visibility = "hidden";
+            document.getElementById('label2').style.visibility = "hidden";
             time2 = false;
         }
     }

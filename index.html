@@ -1,175 +1,137 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-	   "http://www.w3.org/TR/html4/strict.dtd">
+<!doctype html>
 <html lang="fr">
-
-<head>
-    <link rel="icon" type="image/ico" href="images/YouTube-2.ico">
-    <meta charset="UTF-8">
-    <meta name="keywords" lang="fr" content="youtube,realtime,time,real,subscriber,abonne,count,compte,compteur">
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Real Time Youtube Subscriber">
-    <meta http-equiv="content-language" content="fr">
-    <meta name="category" content="internet,divertissement,video,youtube">
-    <meta name="robots" content="all">
-    <meta name="author" content="Antoine Raulin">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/stopwatch.js"></script>
-    <script type="text/javascript" src="js/flipclock.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <link rel="stylesheet" href="css/flipclock.css">
-<link rel="stylesheet" href="odometer-theme-default.css" >
+    <meta name="description" content="A real time youtube subscriber counter.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>YoutubeCounter</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="YoutubeCounter">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.red-red.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="odometer-theme-default.css" >
 <script type="text/javascript" src="odometer.js"></script>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>real time subscriber counter</title>
-
-    <!-- thème CSS -->
-    <link href="css/theme.css" rel="stylesheet">
-	    <link href="css/index.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="police/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    
-	
-
-
-</head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="httpGet2();httpGet22();getyear();start();amplitude.getInstance().logEvent('body load');">
-
-    <nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #860000;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand page-scroll" id="title" href="#page-top" unselectable="on">
-                    <i><img  src="images/YouTube 2.svg" width="25" height="25" id="manette-img"></i> <span class="light">real time</span> youtube subscriber count
-                </a>
-                <div id="navBarDiv">
-                <a id="timeCounterButton" style="position: absolute;right: 2em;top: 1em;" onclick="displayStopWatch();">
-                <img src="images/Stopwatch-100.png" width="40" height="40" >
-                    </a></div>
-            </div>
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                   <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    
-                </ul>
-            </div>
+      <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="httpGet2();">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-    </nav>
-    <header class="intro" style="background-color: black;">
-        <div class="intro-body" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-					<br>
-					<br><br><br>
-                        <div id="stopWatchDiv" style="visibility: hidden;">
-                            <h1 id="time"></h1>
-                        </div>
-<div class="flexContainer">
-
-<div id="div1" class="inputField">
-
-    <div class="flexContainer"><input type="text" id="in1" placeholder="Search: Ex PewDiePie" class="inputField" style="color: black;width: 100%;height: 50px;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;border: 0px; padding: 10px;font-family: Arial;">
-	<a onclick="fullScreen();"><img class="icon icons8-Full-Screen" id="fullScreenButton"src="images/[].png" width="auto" height="50"></a>
-    <a onclick="add();">
-<img class="icon icons8-Plus-Math" id="addButton" src="images/+.png" width="auto" height="50"></a>
-    </div>
-
-
-<center id="CT">
-<div id="odometer" class="odometer" unselectable="on"></div><br/>
-    <div id="odometer2" class="odometer" unselectable="on"></div>
-</center>
-
-</div>
-<div id="div2" style="visibility: hidden;width: 0px;margin-left: 0.3em;">
-    <input type="text" id="in2" placeholder="Search: Ex Smosh" class="inputField" style="color: black;width: 100%;height: 50px;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;border: 0px; padding: 10px;font-family: Arial;">
-
-
-<center id="CT2">
-<div id="odometer12" class="odometer" unselectable="on"></div><br/>
-    <div id="odometer22" class="odometer" unselectable="on"></div>
-</center>
-
-</div>
-</div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <h3>YoutubeCounter</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#overview" class="mdl-layout__tab is-active">Le compteur</a>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" onclick="add();">
+            <i class="material-icons" role="presentation">add</i>
+            <span class="visuallyhidden">Add</span>
+          </button>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="in1">
+                    <label class="mdl-textfield__label" for="in1">Channel Name</label>
                     </div>
+                  
+                  </h4>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div id="odometer" class="odometer" unselectable="on" style="font-size: 3em;"></div><br/>
+    <div id="odometer2" class="odometer" unselectable="on"></div>
                 </div>
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Partager</a>
+              </div>
             </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
+              <li class="mdl-menu__item">Minuteur</li>
+              <li class="mdl-menu__item" disabled>Vues</li>
+              <li class="mdl-menu__item">Detail +/-</li>
+            </ul>
+          </section>
+            <section id="section2" style="visibility: hidden;" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="in2">
+                    <label class="mdl-textfield__label" id="label2" for="in2">Channel Name</label>
+                    </div>
+                  
+                  </h4>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <div id="odometer12" class="odometer" unselectable="on" style="font-size: 3em;"></div><br/>
+    <div id="odometer22" class="odometer" unselectable="on"></div>
+                </div>
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Partager</a>
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+              <li class="mdl-menu__item">Minuteur</li>
+              <li class="mdl-menu__item" disabled>Vues</li>
+              <li class="mdl-menu__item">Detail +/-</li>
+            </ul>
+          </section>
+          <section class="section--footer mdl-color--white mdl-grid">
+          </section>
         </div>
-    </header>
-
-
-
-    <!-- Footer -->
-    <footer style="position: fixed;bottom: 0;width: 100%;">
-        <div class="container text-center">
-            <p id="copyright"></p>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script type="text/javascript" src="js/NavBarScript.js"></script>
-	<script type="text/javascript" src="js/jquery.fittext.js"></script>
-    <script type="text/javascript">
-    $("#page-top").mousemove(function() {
-    clearTimeout(i);
-    $("#fullScreenButton").show();
-    $("#addButton").show();
-    i = setTimeout(function () {
-        $("#fullScreenButton").hide();
-        $("#addButton").hide();
-    }, 3000);
-}).mouseleave(function() {
-    clearTimeout(i);
-    $("#fullScreenButton").hide();
-    $("#addButton").hide();
-});
-    </script>
-    <script type="text/javascript">
-  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
-  r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.0.1-min.gz.js";
-  r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
-  i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
-  return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
-  for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
-  };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
-  for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
-  function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
-  }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
-  if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
-  })(window,document);
-
-  amplitude.getInstance().init("cac29ad2f71c6408b84b221971ec9fe7");
-</script>
-<script type="text/javascript">
-		var clock;
-		
-		$(document).ready(function() {
-			
-			clock = $('.clock').FlipClock({
-		        clockFace: 'HourlyCounter'
-		    });
-		});
-	</script>
-
-</body>
-
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--middle-section">
+          </div>
+          <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+              YoutubeCounter
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+                <li>Made with <i class="em em-heart"></i> by <a href="https://github.com/antoineraulin/">Antoine Raulin</a> and Dimitri Mades</li>
+              <li><a href="https://github.com/antoineraulin/youtubeCounter/issues">Help</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+  </body>
 </html>
