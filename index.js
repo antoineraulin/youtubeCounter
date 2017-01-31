@@ -74,6 +74,10 @@ function httpGet1(theData)
 }
 function httpGet2()
 {
+    if(gup("id") != null && gup('q') != null){
+        httpGet1(gup("id"));document.getElementById('in1').setAttribute('value',gup('q'));
+        document.getElementById('shareInput').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?id='+gup('id')+"&q="+gup('q'));
+                                             }else{
     document.getElementById("odometer").style.visibility = "hidden";
     document.getElementById("odometer2").style.visibility = "hidden";
 var ID2 = document.getElementById("in1").value;
@@ -88,8 +92,9 @@ var ID2 = document.getElementById("in1").value;
     success: function(data1){
 	var thedata = data1['items'][0]['id']['channelId'];
         httpGet1(thedata);
+        document.getElementById('shareInput').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?id='+thedata+"&q="+ID2);
     }
-});}
+});}}
 setTimeout(httpGet2, 600);
 }
 function httpGet12(theData)
@@ -159,7 +164,18 @@ function fullScreen(){
 }
 
 function begin(){
+    var htmlget = gup("id");
+    console.log(htmlget);
     document.getElementById("section2").style.height = "0px";
+}
+
+function gup( name, url ) {
+    if (!url) url = location.href;
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( url );
+    return results == null ? null : results[1];
 }
 
 function showStopWatch(){

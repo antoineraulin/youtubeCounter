@@ -40,6 +40,21 @@
       <script type="text/javascript" src="index.js"></script>
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="httpGet2();begin();show();start();">
+      <dialog class="mdl-dialog">
+    <div class="mdl-dialog__content">
+      <p>
+        lien à partager:
+          </p>
+        <div class="mdl-textfield mdl-js-textfield">
+  <input class="mdl-textfield__input" type="text" id="shareInput">
+  <label class="mdl-textfield__label" for="shareInput"></label>
+</div>
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+      <button type="button" class="mdl-button agree">copier le lien</button>
+      <button type="button" class="mdl-button close">fermer</button>
+    </div>
+  </dialog>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
@@ -76,7 +91,7 @@
                 </div>
               </div>
               <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Partager</a>
+                <button type="button" class="mdl-button show-modal">partager</button>
               </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
@@ -102,9 +117,6 @@
                   <div id="odometer12" class="odometer" unselectable="on" style="font-size: 3em;"></div><br/>
     <div id="odometer22" class="odometer" unselectable="on"></div>
                 </div>
-              </div>
-              <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Partager</a>
               </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
@@ -135,5 +147,30 @@
       </main>
     </div>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+       <script>
+    var dialog = document.querySelector('dialog');
+    var showModalButton = document.querySelector('.show-modal');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showModalButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+    dialog.querySelector('.agree').addEventListener('click', function() {
+      var copyTextarea = document.querySelector('#shareInput');
+  copyTextarea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+    });
+  </script>
   </body>
 </html>
