@@ -168,10 +168,15 @@
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
     console.log('Copying text command was ' + msg);
+      document.getElementById('snackbar').innerHTML = "Le lien à bien été copier.";
+      showSnackBar();
   } catch (err) {
     console.log('Oops, unable to copy');
+      document.getElementById('snackbar').innerHTML = "Oops, impossible de copier le lien";
+      showSnackBar();
   }
     });
   </script>
+      <div id="snackbar"></div>
   </body>
 </html>
