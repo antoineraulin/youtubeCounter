@@ -152,14 +152,19 @@ function fullScreen(){
 	
 }
 
+function begin(){
+    document.getElementById("section2").style.height = "0px";
+}
 
 function add(){
         if(time2 != true){
         document.getElementById('section2').style.visibility = "visible";
+            document.getElementById("section2").style.height = "";
             document.getElementById('odometer12').style.visibility = "visible";
             document.getElementById('odometer22').style.visibility = "visible";
             document.getElementById('in2').style.visibility = "visible";
             document.getElementById('label2').style.visibility = "visible";
+            document.getElementById("add").innerHTML = "-";
             httpGet22();
             time2 = true;
         }else if(time2 == true){
@@ -169,10 +174,12 @@ function add(){
 	    }
 	    catch(err) {}
             document.getElementById('section2').style.visibility = "hidden";
+            document.getElementById("section2").style.height = "0px";
             document.getElementById('odometer12').style.visibility = "hidden";
             document.getElementById('odometer22').style.visibility = "hidden";
             document.getElementById('in2').style.visibility = "hidden";
             document.getElementById('label2').style.visibility = "hidden";
+            document.getElementById("add").innerHTML = '<i class="material-icons" role="presentation">add</i><span class="visuallyhidden">Add</span>';
             time2 = false;
         }
     }
