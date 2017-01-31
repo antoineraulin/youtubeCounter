@@ -63,6 +63,9 @@ function httpGet1(theData)
         }else if(resetCount == true){
             resetCount = false;
             initialCount = parseInt(data1['items'][0]['statistics']['subscriberCount']);
+            stop();
+            reset();
+            start();
             
         }
 	$('#odometer').html(data1['items'][0]['statistics']['subscriberCount']);
@@ -109,6 +112,9 @@ function httpGet12(theData)
         }else if(resetCount2 == true){
             resetCount2 = false;
             initialCount2 = parseInt(data1['items'][0]['statistics']['subscriberCount']);
+            stop();
+            reset();
+            start();
         }
 	$('#odometer12').html(data1['items'][0]['statistics']['subscriberCount']);
     }
@@ -154,6 +160,10 @@ function fullScreen(){
 
 function begin(){
     document.getElementById("section2").style.height = "0px";
+}
+
+function showStopWatch(){
+    document.getElementById('time').style.visibility = "visible";
 }
 
 function add(){
