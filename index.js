@@ -22,6 +22,7 @@ var time2 = false;
 var time3 = false;
 var i = null;
 var myVar;
+var section2inuse = false;
 
 
 
@@ -91,9 +92,18 @@ function httpGet2()
     success: function(data1){
 	var thedata = data1['items'][0]['id']['channelId'];
         httpGet1(thedata);
-        document.getElementById('shareInput').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?q='+ID2);
+        document.getElementById('dataSave').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?q='+ID2);
     }
-});}
+});
+    if(section2inuse == true){
+        var urlbegin = document.getElementById('dataSave').getAttribute('value');
+        var urlplus = urlbegin + "&q2="+document.getElementById("in2").value;
+        document.getElementById('shareInput').setAttribute('value', urlplus);
+    }else{
+        var urlbegin = document.getElementById('dataSave').getAttribute('value');
+        document.getElementById('shareInput').setAttribute('value', urlbegin);
+    }
+    }
 setTimeout(httpGet2, 600);
 }
 function httpGet12(theData)
@@ -126,9 +136,12 @@ function httpGet12(theData)
 }
 function httpGet22()
 {
+    var ID2;
+    if(gup('q2') != null){ID2 = gup('q2');document.getElementById('in2').setAttribute('value', gup('q2'));}else{ID2 = document.getElementById("in2").value;}
     document.getElementById("odometer12").style.visibility = "hidden";
     document.getElementById("odometer22").style.visibility = "hidden";
-var ID2 = document.getElementById("in2").value;
+    var ID11 = document.getElementById("in2").value;
+    if(ID2 != ID11){ID2 = ID11}else{}
     if(ID2 != ""){
         if(ID2 != initialName2){initialName2 = ID2;resetCount2 = true;}
         document.getElementById("odometer12").style.visibility = "visible";
@@ -163,9 +176,18 @@ function fullScreen(){
 }
 
 function begin(){
-    var htmlget = gup("id");
-    console.log(htmlget);
     document.getElementById("section2").style.height = "0px";
+    if(gup('q2') != null){
+        document.getElementById('section2').style.visibility = "visible";
+            document.getElementById("section2").style.height = "";
+            document.getElementById('odometer12').style.visibility = "visible";
+            document.getElementById('odometer22').style.visibility = "visible";
+            document.getElementById('in2').style.visibility = "visible";
+            document.getElementById('label2').style.visibility = "visible";
+            document.getElementById("add").innerHTML = "-";
+            section2inuse = true;
+            httpGet22();
+        }
 }
 
 function gup( name, url ) {
@@ -191,13 +213,11 @@ function add(){
             document.getElementById('label2').style.visibility = "visible";
             document.getElementById("add").innerHTML = "-";
             httpGet22();
+            section2inuse = true;
             time2 = true;
         }else if(time2 == true){
             
-	    try{
             clearTimeout(myVar);
-	    }
-	    catch(err) {}
             document.getElementById('section2').style.visibility = "hidden";
             document.getElementById("section2").style.height = "0px";
             document.getElementById('odometer12').style.visibility = "hidden";
@@ -205,6 +225,7 @@ function add(){
             document.getElementById('in2').style.visibility = "hidden";
             document.getElementById('label2').style.visibility = "hidden";
             document.getElementById("add").innerHTML = '<i class="material-icons" role="presentation">add</i><span class="visuallyhidden">Add</span>';
+            section2inuse = false;
             time2 = false;
         }
     }
