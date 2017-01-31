@@ -74,13 +74,12 @@ function httpGet1(theData)
 }
 function httpGet2()
 {
-    if(gup("id") != null && gup('q') != null){
-        httpGet1(gup("id"));document.getElementById('in1').setAttribute('value',gup('q'));
-        document.getElementById('shareInput').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?id='+gup('id')+"&q="+gup('q'));
-                                             }else{
+    var ID2;
+    if(gup('q') != null){ID2 = gup('q');document.getElementById('in1').setAttribute('value', gup('q'));}else{ID2 = document.getElementById("in1").value;}
     document.getElementById("odometer").style.visibility = "hidden";
     document.getElementById("odometer2").style.visibility = "hidden";
-var ID2 = document.getElementById("in1").value;
+    var ID11 = document.getElementById("in1").value;
+    if(ID2 != ID11){ID2 = ID11}else{}
     if(ID2 != ""){
         if(ID2 != initialName){initialName = ID2;resetCount = true;}
         document.getElementById("odometer").style.visibility = "visible";
@@ -92,9 +91,9 @@ var ID2 = document.getElementById("in1").value;
     success: function(data1){
 	var thedata = data1['items'][0]['id']['channelId'];
         httpGet1(thedata);
-        document.getElementById('shareInput').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?id='+thedata+"&q="+ID2);
+        document.getElementById('shareInput').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?q='+ID2);
     }
-});}}
+});}
 setTimeout(httpGet2, 600);
 }
 function httpGet12(theData)
