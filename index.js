@@ -184,6 +184,7 @@ function begin(){
             element.removeChild(element.firstChild);
         }
         alert("this is an ios device. Some function will not work either.");
+        document.getElementById('shareButton').setAttribute('onclick', 'share();');
     }
     if(gup('q2') != null){
         document.getElementById('section2').style.visibility = "visible";
@@ -250,4 +251,15 @@ function showSnackBar() {
 
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function share(){
+    if(section2inuse == true){
+        var urlbegin = document.getElementById('dataSave').getAttribute('value');
+        var urlplus = urlbegin + "&q2="+document.getElementById("in2").value;
+        prompt('lien à partager:', urlplus);
+    }else{
+        var urlbegin = document.getElementById('dataSave').getAttribute('value');
+        prompt('lien à partager:', urlbegin);
+    }
 }
