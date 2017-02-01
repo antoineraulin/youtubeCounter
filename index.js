@@ -179,11 +179,11 @@ function begin(){
     document.getElementById("section2").style.height = "0px";
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     if (iOS){
+        document.getElementById('shareButton').setAttribute("onclick", "share();");
         var element = document.getElementById("dialogPopUp");
         while (element.firstChild) {
             element.removeChild(element.firstChild);
         }
-        alert("this is an ios device. Some function will not work either.");
     }
     if(gup('q2') != null){
         document.getElementById('section2').style.visibility = "visible";
@@ -250,4 +250,15 @@ function showSnackBar() {
 
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+share(){
+    if(section2inuse == true){
+        var urlbegin = document.getElementById('dataSave').getAttribute('value');
+        var urlplus = urlbegin + "&q2="+document.getElementById("in2").value;
+        prompt('lien à partager:', urlplus);
+    }else{
+        var urlbegin = document.getElementById('dataSave').getAttribute('value');
+        prompt('lien à partager:', urlbegin);
+    }
 }
