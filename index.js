@@ -178,7 +178,13 @@ function fullScreen(){
 function begin(){
     document.getElementById("section2").style.height = "0px";
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-    if (iOS){document.getElementById('dialog').remove;alert("this is an ios device.");}
+    if (iOS){
+        var element = document.getElementById("dialogPopUp");
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+        alert("this is an ios device. Some function will not work either.");
+    }
     if(gup('q2') != null){
         document.getElementById('section2').style.visibility = "visible";
             document.getElementById("section2").style.height = "";
