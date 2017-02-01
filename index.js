@@ -177,6 +177,8 @@ function fullScreen(){
 
 function begin(){
     document.getElementById("section2").style.height = "0px";
+    var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    if (isSafari){document.getElementById('dialog').visibility = "hidden";}
     if(gup('q2') != null){
         document.getElementById('section2').style.visibility = "visible";
             document.getElementById("section2").style.height = "";
@@ -201,6 +203,9 @@ function gup( name, url ) {
 
 function showStopWatch(){
     document.getElementById('time').style.visibility = "visible";
+}
+function hideStopWatch(){
+    document.getElementById('time').style.visibility = "hidden";
 }
 
 function add(){
