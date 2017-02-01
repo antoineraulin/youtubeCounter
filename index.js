@@ -179,11 +179,11 @@ function begin(){
     document.getElementById("section2").style.height = "0px";
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     if (iOS){
-        document.getElementById('shareButton').setAttribute("onclick", "share();");
         var element = document.getElementById("dialogPopUp");
         while (element.firstChild) {
             element.removeChild(element.firstChild);
         }
+        document.getElementById('shareButton').setAttribute("onclick", "share();");
     }
     if(gup('q2') != null){
         document.getElementById('section2').style.visibility = "visible";
