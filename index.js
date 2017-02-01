@@ -178,7 +178,7 @@ function fullScreen(){
 function begin(){
     document.getElementById("section2").style.height = "0px";
     var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-    if (isSafari){document.getElementById('dialog').visibility = "hidden";}
+    if (isSafari){document.getElementById('dialog').remove;}
     if(gup('q2') != null){
         document.getElementById('section2').style.visibility = "visible";
             document.getElementById("section2").style.height = "";
