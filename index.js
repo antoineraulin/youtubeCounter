@@ -96,6 +96,7 @@ function httpGet2()
         document.getElementById('dataSave').setAttribute('value', 'https://antoineraulin.github.io/youtubeCounter/index.html?q='+ID2);
     }
 });
+	    try{
     if(section2inuse == true){
         var urlbegin = document.getElementById('dataSave').getAttribute('value');
         var urlplus = urlbegin + "&q2="+document.getElementById("in2").value;
@@ -103,7 +104,7 @@ function httpGet2()
     }else{
         var urlbegin = document.getElementById('dataSave').getAttribute('value');
         document.getElementById('shareInput').setAttribute('value', urlbegin);
-    }
+    }}catch(e){console.log(e);}
     }
 setTimeout(httpGet2, 600);
 }
