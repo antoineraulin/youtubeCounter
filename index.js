@@ -70,6 +70,7 @@ function httpGet1(theData)
             
         }
 	$('#odometer').html(data1['items'][0]['statistics']['subscriberCount']);
+    $('#odometerView').html(data1['items'][0]['statistics']['viewCount']);
     }
 });
 }
