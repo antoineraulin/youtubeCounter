@@ -23,6 +23,7 @@ var time3 = false;
 var i = null;
 var myVar;
 var section2inuse = false;
+var vue1state = false;
 
 
 
@@ -70,13 +71,21 @@ function httpGet1(theData)
             
         }
 	$('#odometer').html(data1['items'][0]['statistics']['subscriberCount']);
+        if(vue1state == true){
     $('#odometerView').html(data1['items'][0]['statistics']['viewCount']);
+        }else{
+    }
     }
 });
 }
 function httpGet2()
 {
     var ID2;
+    if(vue1state == true){
+            document.getElementById('odometerView').style.visibility = "visible";
+        }else{
+        document.getElementById('odometerView').style.visibility = "hidden";
+    }
     if(gup('q') != null){ID2 = gup('q');document.getElementById('in1').setAttribute('value', gup('q'));}else{ID2 = document.getElementById("in1").value;}
     document.getElementById("odometer").style.visibility = "hidden";
     document.getElementById("odometer2").style.visibility = "hidden";
@@ -179,7 +188,7 @@ function fullScreen(){
 
 function begin(){
     document.getElementById("section2").style.height = "0px";
-	document.getElementById("odometerView").visibility = "hidden";
+	vue1state = false;
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     var isFirefox = typeof InstallTrigger !== 'undefined';
     if (iOS || isFirefox){
