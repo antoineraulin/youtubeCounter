@@ -164,6 +164,7 @@
     }
     showModalButton.addEventListener('click', function() {
       dialog.showModal();
+      amplitude.getInstance().logEvent('share');
     });
     dialog.querySelector('.close').addEventListener('click', function() {
       dialog.close();
