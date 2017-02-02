@@ -164,7 +164,14 @@
     }
     showModalButton.addEventListener('click', function() {
       dialog.showModal();
-      amplitude.getInstance().logEvent('share');
+      if(section2inuse == true){
+        var urlbegin = document.getElementById('in1').value;
+        var urlplus = document.getElementById("in2").value;
+        amplitude.getInstance().logEvent('share '+urlbegin + " & "+urlplus);
+    }else{
+        var urlbegin = document.getElementById('in1').value;
+        amplitude.getInstance().logEvent('share '+urlbegin);
+    }
     });
     dialog.querySelector('.close').addEventListener('click', function() {
       dialog.close();
