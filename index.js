@@ -179,6 +179,7 @@ function fullScreen(){
 
 function begin(){
     document.getElementById("section2").style.height = "0px";
+	document.getElementById("odometerView").visibility = "hidden";
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     var isFirefox = typeof InstallTrigger !== 'undefined';
     if (iOS || isFirefox){
