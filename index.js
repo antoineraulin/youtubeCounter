@@ -179,8 +179,8 @@ function fullScreen(){
 function begin(){
     document.getElementById("section2").style.height = "0px";
     var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-    
-    if (iOS || $.browser.mozilla){
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+    if (iOS || isFirefox){
         var element = document.getElementById("dialogPopUp");
         while (element.firstChild) {
             element.removeChild(element.firstChild);
