@@ -248,5 +248,19 @@ However, delay the fade out process for 2.5 seconds */
 
 });
       </script>
+    <script>
+      $('input[name=checkbox2]').change(function(){
+
+    if($(this).is(':checked'))
+    {
+        document.getElementById('odometerView').visibility = "visible";
+    }
+    else
+    {
+        document.getElementById('odometerView').visibility = "hidden";
+    }    
+
+});
+      </script>
   </body>
 </html>
