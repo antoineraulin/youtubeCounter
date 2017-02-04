@@ -72,7 +72,7 @@ function httpGet1(theData)
         }
 	$('#odometer').html(data1['items'][0]['statistics']['subscriberCount']);
         if(vue1state == true){
-    $('#odometerView').html(data1['items'][0]['statistics']['viewCount']);
+    $('#odometerView').html(data1['items'][0]['statistics']['viewCount'] + " vues");
         }else{
     }
     }
@@ -82,9 +82,9 @@ function httpGet2()
 {
     var ID2;
     if(vue1state == true){
-            document.getElementById('odometerView').style.visibility = "visible";
+            document.getElementById('odometerViewDiv').style.visibility = "visible";
         }else{
-        document.getElementById('odometerView').style.visibility = "hidden";
+        document.getElementById('odometerViewDiv').style.visibility = "hidden";
     }
     if(gup('q') != null){ID2 = gup('q');document.getElementById('in1').setAttribute('value', gup('q'));}else{ID2 = document.getElementById("in1").value;}
     document.getElementById("odometer").style.visibility = "hidden";

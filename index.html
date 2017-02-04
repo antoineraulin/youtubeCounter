@@ -76,12 +76,12 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            <h3><a href="index.html" style="color: white; text-decoration: none">YoutubeCounter</a></h3>
+            <h3><a href="index.html" class="unselectable" style="color: white; text-decoration: none">YoutubeCounter</a></h3>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab is-active">Le compteur</a>
+          <a href="#overview" class="mdl-layout__tab is-active unselectable">Le compteur</a>
             <a href="#overview" class="mdl-layout__tab"><span id="time" style="visibility: hidden;"></span></a>
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" onclick="add();">
             <i class="material-icons" role="presentation">add</i>
@@ -102,9 +102,9 @@
                   
                   </h4>
                 <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <div id="odometer" class="odometer" unselectable="on" style="font-size: 3em;"></div><br/>
-                  <div id="odometerView" class="odometer" unselectable="on" style="font-size: 3em;"></div><br/>
-    <div id="odometer2" class="odometer" unselectable="on"></div>
+                  <div id="odometer" class="odometer unselectable" style="font-size: 3em;cursor: default;"></div><br/>
+                    <div style="cursor: default;" class="unselectable" id="odometerViewDiv"><div id="odometerView" class="odometer unselectable" style="font-size: 2em;cursor: default;"></div> <span style="font-size: 1.4em;">vues</span></div><br/>
+    <div id="odometer2" class="odometer unselectable" style="font-size: 1em; cursor: default;"></div>
                 </div>
               </div>
               <div class="mdl-card__actions" id="shareDiv">
@@ -140,8 +140,9 @@
                   
                   </h4>
                 <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-                  <div id="odometer12" class="odometer" unselectable="on" style="font-size: 3em;"></div><br/>
-    <div id="odometer22" class="odometer" unselectable="on"></div>
+                  <div id="odometer12" class="odometer unselectable" style="font-size: 3em; cursor: default;"></div><br/>
+                    <div id="odometerView2" class="odometer unselectable" style="font-size: 2em;cursor: default;"></div><br/>
+    <div id="odometer22" class="odometer unselectable" style="font-size: 1em; cursor: default;"></div>
                 </div>
               </div>
             </div>
